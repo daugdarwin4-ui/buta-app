@@ -1,0 +1,5 @@
+# Pyrefly (the editor's Python checker): use the project's Python environment, which has
+# python-docx, ultralytics, Pillow etc. installed. There is no system-wide Python on this PC.
+python-interpreter-path = "model/train-venv/Scripts/python.exe"
+site-package-path = ["model/train-venv/Lib/site-packages"]
+project-excludes = ["**/node_modules", "**/train-venv", "**/venv", "**/.*", "**/__pycache__", "_backup*"]

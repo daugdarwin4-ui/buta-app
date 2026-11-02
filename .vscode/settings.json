@@ -1,0 +1,3 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\model\\train-venv\\Scripts\\python.exe"
+}

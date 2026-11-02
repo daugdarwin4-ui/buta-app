@@ -1,0 +1,56 @@
+# GuideAI (BUTA APP) — what stays out of the GitHub repository
+# Rebuild everything left out with SETUP_NEW_LAPTOP.md. Datasets live on Google Drive.
+
+# ── Dependencies (npm install recreates them) ──
+node_modules/
+.pnp
+.pnp.js
+
+# ── Secrets: NEVER commit. Copy .env files to a new laptop by hand ──
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+# Old pre-refactor backup: has the old Supabase key hard-coded (kept on the PC, not on GitHub)
+_backup_2026-09-29/
+
+# ── Generated app builds ──
+dist/
+build/
+mobile/.expo/
+mobile/expo-env.d.ts
+mobile/android/
+mobile/ios/
+
+# ── Python ──
+__pycache__/
+*.pyc
+model/train-venv/
+model/tools/
+
+# ── Datasets: too big for GitHub, kept on Google Drive ──
+model/datasets/raw/
+model/datasets/src/
+model/datasets/merged/
+model/datasets/merged_v3/
+model/datasets/phone/
+model/colab/*.zip
+
+# ── Model files: keep the trained weights and the phone models, skip rebuildable ones ──
+*.onnx
+*.pb
+model/runs/**/last.pt
+model/export/**/tfl_out/*
+!model/export/**/tfl_out/*_float32.tflite
+
+# ── Logs ──
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# ── OS / editor ──
+.DS_Store
+Thumbs.db
+.idea/
+*.suo

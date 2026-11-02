@@ -1,0 +1,11 @@
+{
+  // Type-checking for the Jest test files only. The app's tsconfig excludes __tests__ and sets
+  // "types": [] (no global type packages), so without this file the editor reports every
+  // describe / it / expect as unknown. Check with: npx tsc -p __tests__ --noEmit
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest"]
+  },
+  "include": ["./**/*.ts", "./**/*.tsx", "../src/**/*.ts", "../src/**/*.tsx", "../expo-env.d.ts"],
+  "exclude": []
+}

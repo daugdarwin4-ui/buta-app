@@ -1,0 +1,318 @@
+{
+ "v1 (shipped in app)": {
+  "precision": 0.697,
+  "recall": 0.349,
+  "mAP50": 0.386,
+  "mAP50_95": 0.27,
+  "speed_ms": {
+   "preprocess": 0.14,
+   "inference": 2.36,
+   "loss": 0.0,
+   "postprocess": 2.07
+  },
+  "per_class": {
+   "person": {
+    "precision": 0.789,
+    "recall": 0.69,
+    "mAP50": 0.78,
+    "mAP50_95": 0.535
+   },
+   "bicycle": {
+    "precision": 0.384,
+    "recall": 0.269,
+    "mAP50": 0.277,
+    "mAP50_95": 0.172
+   },
+   "car": {
+    "precision": 0.795,
+    "recall": 0.76,
+    "mAP50": 0.814,
+    "mAP50_95": 0.615
+   },
+   "motorcycle": {
+    "precision": 0.799,
+    "recall": 0.704,
+    "mAP50": 0.701,
+    "mAP50_95": 0.433
+   },
+   "tricycle": {
+    "precision": 0.934,
+    "recall": 0.832,
+    "mAP50": 0.914,
+    "mAP50_95": 0.704
+   },
+   "jeepney": {
+    "precision": 0.701,
+    "recall": 0.778,
+    "mAP50": 0.823,
+    "mAP50_95": 0.692
+   },
+   "bus": {
+    "precision": 0.858,
+    "recall": 0.764,
+    "mAP50": 0.814,
+    "mAP50_95": 0.662
+   },
+   "truck": {
+    "precision": 0.722,
+    "recall": 0.505,
+    "mAP50": 0.665,
+    "mAP50_95": 0.496
+   },
+   "dog": {
+    "precision": 0.405,
+    "recall": 0.2,
+    "mAP50": 0.205,
+    "mAP50_95": 0.151
+   },
+   "cat": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.02,
+    "mAP50_95": 0.009
+   },
+   "cow": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "mAP50": 0.0,
+    "mAP50_95": 0.0
+   },
+   "horse": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "mAP50": 0.0,
+    "mAP50_95": 0.0
+   },
+   "pothole": {
+    "precision": 0.717,
+    "recall": 0.398,
+    "mAP50": 0.508,
+    "mAP50_95": 0.24
+   },
+   "open_drainage": {
+    "precision": 0.642,
+    "recall": 0.278,
+    "mAP50": 0.327,
+    "mAP50_95": 0.277
+   },
+   "stairs": {
+    "precision": 0.628,
+    "recall": 0.697,
+    "mAP50": 0.684,
+    "mAP50_95": 0.364
+   },
+   "pole": {
+    "precision": 0.665,
+    "recall": 0.555,
+    "mAP50": 0.595,
+    "mAP50_95": 0.399
+   },
+   "barrier": {
+    "precision": 0.782,
+    "recall": 0.177,
+    "mAP50": 0.209,
+    "mAP50_95": 0.124
+   },
+   "cart": {
+    "precision": 0.727,
+    "recall": 0.667,
+    "mAP50": 0.773,
+    "mAP50_95": 0.54
+   },
+   "bench": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.028,
+    "mAP50_95": 0.013
+   },
+   "chair": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.03,
+    "mAP50_95": 0.012
+   },
+   "fire hydrant": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.0,
+    "mAP50_95": 0.0
+   },
+   "potted plant": {
+    "precision": 0.183,
+    "recall": 0.1,
+    "mAP50": 0.085,
+    "mAP50_95": 0.053
+   },
+   "traffic light": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.0,
+    "mAP50_95": 0.0
+   },
+   "stop sign": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.0,
+    "mAP50_95": 0.0
+   }
+  }
+ },
+ "v2 (retrained, stopped at epoch 37/45)": {
+  "precision": 0.536,
+  "recall": 0.477,
+  "mAP50": 0.48,
+  "mAP50_95": 0.328,
+  "speed_ms": {
+   "preprocess": 0.14,
+   "inference": 2.17,
+   "loss": 0.0,
+   "postprocess": 2.01
+  },
+  "per_class": {
+   "person": {
+    "precision": 0.693,
+    "recall": 0.822,
+    "mAP50": 0.842,
+    "mAP50_95": 0.59
+   },
+   "bicycle": {
+    "precision": 0.451,
+    "recall": 0.538,
+    "mAP50": 0.481,
+    "mAP50_95": 0.331
+   },
+   "car": {
+    "precision": 0.686,
+    "recall": 0.842,
+    "mAP50": 0.827,
+    "mAP50_95": 0.632
+   },
+   "motorcycle": {
+    "precision": 0.681,
+    "recall": 0.774,
+    "mAP50": 0.731,
+    "mAP50_95": 0.444
+   },
+   "tricycle": {
+    "precision": 0.869,
+    "recall": 0.879,
+    "mAP50": 0.909,
+    "mAP50_95": 0.698
+   },
+   "jeepney": {
+    "precision": 0.799,
+    "recall": 0.852,
+    "mAP50": 0.88,
+    "mAP50_95": 0.755
+   },
+   "bus": {
+    "precision": 0.756,
+    "recall": 0.945,
+    "mAP50": 0.929,
+    "mAP50_95": 0.719
+   },
+   "truck": {
+    "precision": 0.649,
+    "recall": 0.62,
+    "mAP50": 0.683,
+    "mAP50_95": 0.531
+   },
+   "dog": {
+    "precision": 0.43,
+    "recall": 0.4,
+    "mAP50": 0.492,
+    "mAP50_95": 0.302
+   },
+   "cat": {
+    "precision": 0.151,
+    "recall": 0.222,
+    "mAP50": 0.19,
+    "mAP50_95": 0.1
+   },
+   "cow": {
+    "precision": 0.567,
+    "recall": 0.133,
+    "mAP50": 0.191,
+    "mAP50_95": 0.126
+   },
+   "horse": {
+    "precision": 0.309,
+    "recall": 0.417,
+    "mAP50": 0.364,
+    "mAP50_95": 0.162
+   },
+   "pothole": {
+    "precision": 0.561,
+    "recall": 0.485,
+    "mAP50": 0.518,
+    "mAP50_95": 0.235
+   },
+   "open_drainage": {
+    "precision": 0.742,
+    "recall": 0.278,
+    "mAP50": 0.326,
+    "mAP50_95": 0.228
+   },
+   "stairs": {
+    "precision": 0.597,
+    "recall": 0.789,
+    "mAP50": 0.74,
+    "mAP50_95": 0.412
+   },
+   "pole": {
+    "precision": 0.619,
+    "recall": 0.644,
+    "mAP50": 0.653,
+    "mAP50_95": 0.432
+   },
+   "barrier": {
+    "precision": 0.623,
+    "recall": 0.222,
+    "mAP50": 0.228,
+    "mAP50_95": 0.133
+   },
+   "cart": {
+    "precision": 0.583,
+    "recall": 0.789,
+    "mAP50": 0.804,
+    "mAP50_95": 0.559
+   },
+   "bench": {
+    "precision": 0.273,
+    "recall": 0.133,
+    "mAP50": 0.08,
+    "mAP50_95": 0.044
+   },
+   "chair": {
+    "precision": 0.17,
+    "recall": 0.061,
+    "mAP50": 0.05,
+    "mAP50_95": 0.02
+   },
+   "fire hydrant": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "mAP50": 0.006,
+    "mAP50_95": 0.006
+   },
+   "potted plant": {
+    "precision": 0.424,
+    "recall": 0.4,
+    "mAP50": 0.322,
+    "mAP50_95": 0.219
+   },
+   "traffic light": {
+    "precision": 0.239,
+    "recall": 0.201,
+    "mAP50": 0.275,
+    "mAP50_95": 0.187
+   },
+   "stop sign": {
+    "precision": 1.0,
+    "recall": 0.0,
+    "mAP50": 0.0,
+    "mAP50_95": 0.0
+   }
+  }
+ }
+}
