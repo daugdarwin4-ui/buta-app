@@ -1,16 +1,30 @@
 # Setting up GuideAI (BUTA APP) on another laptop
 
-The transfer zip leaves out folders that are large but can be recreated (about 35 GB). This page
-shows how to get everything working again.
+The project is stored in three places:
 
-**Left out of the zip, recreated below:** `mobile/node_modules`, `server/node_modules`,
-`model/train-venv`, `mobile/android`, `mobile/dist`, `mobile/.expo`, `model/datasets/src`,
-`model/datasets/merged_v3`, and `model/datasets/raw` (the original dataset downloads; only needed to
-rebuild the dataset from scratch).
+| What | Where |
+|---|---|
+| Code, trained models, Colab notebook, capstone paper, hardware docs | **Private GitHub repository** |
+| Datasets (about 7 GB, too big for GitHub) | **Google Drive**, folder *My Drive/GuideAI* |
+| Secrets: `mobile/.env` (Gemini API key) and `server/.env` | **Copy by hand** (USB or a private message), never GitHub |
 
-**Included:** all source code, `mobile/.env` (contains the Gemini API key — keep the zip private),
-the trained models (`model/runs`, `model/export`, `mobile/assets/models`), the training dataset
-(`model/datasets/merged`), the Colab files (`model/colab`), the capstone paper, and the hardware docs.
+Left out of GitHub and recreated below: `mobile/node_modules`, `server/node_modules`,
+`model/train-venv`, `mobile/android`, `mobile/dist`, `mobile/.expo`.
+
+## 0. Download the project
+
+```bash
+cd Desktop
+git clone <your private repository URL> "BUTA APP"
+```
+Git asks you to sign in to GitHub in the browser the first time.
+
+Then copy the two `.env` files into `BUTA APP/mobile/.env` and `BUTA APP/server/.env`.
+
+**Datasets (only if you will retrain):** from *My Drive/GuideAI*, download
+`guideai_v3_dataset.zip` (the 45-class training set) and, if you uploaded them, the raw dataset
+downloads. Unzip `guideai_v3_dataset.zip` into `BUTA APP/model/datasets/` (it creates `merged_v3/`).
+Training on Colab only needs the zip on Drive; nothing has to be downloaded.
 
 ---
 
@@ -23,10 +37,6 @@ the trained models (`model/runs`, `model/export`, `mobile/assets/models`), the t
 | VS Code | any | https://code.visualstudio.com |
 | Android Studio (for `adb` and the Android SDK) | latest | https://developer.android.com/studio |
 | Python (only to train models on the laptop) | 3.12 | https://www.python.org |
-
-## 2. Unzip
-
-Unzip to a path **without special characters**, for example `C:\Users\<you>\Desktop\BUTA APP`.
 
 ## 3. Mobile app
 
