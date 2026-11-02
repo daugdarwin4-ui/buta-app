@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "author": "GuideAI",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_sos",
+      "top": 40,
+      "left": 150,
+      "attrs": {
+        "color": "red",
+        "label": "SOS"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_sos",
+      "top": 66.35,
+      "left": 70,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_mode",
+      "top": 130,
+      "left": 150,
+      "attrs": {
+        "color": "white",
+        "label": "MODE"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_mode",
+      "top": 156.35,
+      "left": 70,
+      "attrs": {
+        "value": "10000"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "motor",
+      "top": 215,
+      "left": 160,
+      "attrs": {
+        "color": "purple",
+        "label": "motor"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r_motor",
+      "top": 251.35,
+      "left": 195,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 330,
+      "left": 300,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 312,
+      "left": 150,
+      "attrs": {
+        "volume": "0.1"
+      }
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu",
+      "top": 470,
+      "left": 570,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "laser",
+      "top": 485,
+      "left": 45,
+      "attrs": {
+        "travelLength": "30",
+        "value": "40"
+      },
+      "rotate": 180
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultra",
+      "top": 640,
+      "left": 441.2,
+      "attrs": {
+        "distance": "300"
+      },
+      "rotate": 180
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:3V3",
+      "btn_sos:1.l",
+      "red",
+      [
+        "h8.7",
+        "v121.5",
+        "h-390",
+        "v-557"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "btn_mode:1.l",
+      "red",
+      [
+        "h8.7",
+        "v121.5",
+        "h-390",
+        "v-467"
+      ]
+    ],
+    [
+      "btn_sos:2.l",
+      "r_sos:2",
+      "green",
+      []
+    ],
+    [
+      "btn_mode:2.l",
+      "r_mode:2",
+      "green",
+      []
+    ],
+    [
+      "esp:GND.2",
+      "r_sos:1",
+      "black",
+      [
+        "h-265",
+        "v-407"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "r_mode:1",
+      "black",
+      [
+        "h-265",
+        "v-317"
+      ]
+    ],
+    [
+      "btn_sos:2.r",
+      "esp:D32",
+      "green",
+      [
+        "h68",
+        "v330.2"
+      ]
+    ],
+    [
+      "btn_mode:2.r",
+      "esp:D33",
+      "green",
+      [
+        "h58",
+        "v249.7"
+      ]
+    ],
+    [
+      "esp:D25",
+      "r_motor:2",
+      "violet",
+      [
+        "h-40",
+        "v-164.3"
+      ]
+    ],
+    [
+      "r_motor:1",
+      "motor:A",
+      "violet",
+      []
+    ],
+    [
+      "esp:GND.2",
+      "motor:C",
+      "black",
+      [
+        "h-265",
+        "v-189",
+        "h135"
+      ]
+    ],
+    [
+      "esp:D26",
+      "buzzer:2",
+      "orange",
+      [
+        "h-118"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "buzzer:1",
+      "black",
+      [
+        "h-265",
+        "v-24",
+        "h137"
+      ]
+    ],
+    [
+      "esp:D21",
+      "mpu:SDA",
+      "yellow",
+      [
+        "h214.3"
+      ]
+    ],
+    [
+      "esp:D22",
+      "mpu:SCL",
+      "cyan",
+      [
+        "h223.9"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "mpu:VCC",
+      "red",
+      [
+        "h8.7",
+        "v271.5",
+        "h310",
+        "v-305",
+        "h-75.6"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "mpu:GND",
+      "black",
+      [
+        "h18.7",
+        "v291",
+        "h320",
+        "v-325",
+        "h-105.2"
+      ]
+    ],
+    [
+      "esp:TX2",
+      "ultra:TRIG",
+      "blue",
+      [
+        "h128.7"
+      ]
+    ],
+    [
+      "esp:RX2",
+      "ultra:ECHO",
+      "purple",
+      [
+        "h118.7"
+      ]
+    ],
+    [
+      "esp:GND.1",
+      "ultra:GND",
+      "black",
+      [
+        "h18.7",
+        "v141",
+        "h90"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "ultra:VCC",
+      "red",
+      [
+        "h8.7",
+        "v271.5",
+        "h310",
+        "v-130",
+        "h-180"
+      ]
+    ],
+    [
+      "esp:D27",
+      "laser:SIG",
+      "gold",
+      [
+        "h-40",
+        "v90.8"
+      ]
+    ],
+    [
+      "esp:3V3",
+      "laser:VCC",
+      "red",
+      [
+        "h8.7",
+        "v121.5",
+        "h-152",
+        "v-58.4"
+      ]
+    ],
+    [
+      "esp:GND.2",
+      "laser:GND",
+      "black",
+      [
+        "h-265",
+        "v72.6"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}

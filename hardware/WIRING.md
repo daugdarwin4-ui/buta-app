@@ -128,7 +128,12 @@ Test each step before adding the next. Upload code over USB with the **cane swit
 - **Vibration motor** glued inside the grip under the palm; **SOS and MODE buttons** on top of the
   grip where the thumb rests. A 6-wire cable runs from the box along the shaft to the grip.
 
-## 5. Next step
+## 5. Program and simulator
 
-The ESP32 program (sensor readings, on-cane warnings with the motor and buzzer, and the Bluetooth
-link to the app described in [PROTOCOL.md](PROTOCOL.md)) uses exactly these pins.
+The ESP32 program is [firmware/guideai_cane/guideai_cane.ino](firmware/guideai_cane/guideai_cane.ino). It handles:
+- the sensor readings;
+- on-cane warnings with the motor and buzzer;
+- SOS, MODE and fall events;
+- the Bluetooth link from [PROTOCOL.md](PROTOCOL.md).
+
+It uses exactly these pins. Try it first in the Wokwi simulator: see [wokwi/README.md](wokwi/README.md).
