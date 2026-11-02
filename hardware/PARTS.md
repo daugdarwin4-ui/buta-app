@@ -69,7 +69,7 @@ Not needed:
 | **VL53L0X**, not VL53L1X | Same wiring. Its ~2 m range is enough to check the ground just ahead, it reads faster, and it's cheaper and easier to find. (The app treats a ground reading of 200 cm as "nothing below", i.e. a drop.) |
 | **MPU6050 straight-pin soldered**, not "Unsoldered" or "Chinese Chip" | Plugs straight into the breadboard. The "Chinese Chip" version is often a copy that common libraries don't recognise ("Failed to find MPU6050 chip"). |
 | **Bare coin motor + transistor + diode**, not a vibration motor module | No trusted module sellers were found. The bare parts are generic and easy to get; the motor draws 60–90 mA, more than an ESP32 pin can safely give (~20 mA), so the transistor does the switching. |
-| **No MT3608 boost converter** | It was only needed to give 5 V to the HC-SR04. |
+| ~~No MT3608 boost converter~~ → **MT3608 is used** (updated with [WIRING.md](WIRING.md)) | First it was only meant for the HC-SR04. When the power wiring was planned, it turned out the ESP32 needs about 5 V on `VIN`, and one 18650 gives only 3.0–4.2 V, so the MT3608 now powers the ESP32 (set to 5.0 V). |
 | **No ESP32-CAM** | Too weak for object recognition; the phone camera does that job. |
 
 ## 6. Buying tips
