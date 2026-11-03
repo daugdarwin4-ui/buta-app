@@ -15,9 +15,10 @@ Left out of GitHub and recreated below: `mobile/node_modules`, `server/node_modu
 
 ```bash
 cd Desktop
-git clone <your private repository URL> "BUTA APP"
+git clone https://github.com/daugdarwin4-ui/buta-app.git "BUTA APP"
 ```
-Git asks you to sign in to GitHub in the browser the first time.
+Git asks you to sign in to GitHub in the browser the first time. Use the **daugdarwin4-ui** account
+(the repository is private).
 
 Then copy the two `.env` files into `BUTA APP/mobile/.env` and `BUTA APP/server/.env`.
 
@@ -38,7 +39,7 @@ Training on Colab only needs the zip on Drive; nothing has to be downloaded.
 | Android Studio (for `adb` and the Android SDK) | latest | https://developer.android.com/studio |
 | Python (only to train models on the laptop) | 3.12 | https://www.python.org |
 
-## 3. Mobile app
+## 2. Mobile app
 
 ```bash
 cd "BUTA APP/mobile"
@@ -59,14 +60,14 @@ Building a new APK (only needed for native changes):
 npx -y eas-cli@latest build -p android --profile preview
 ```
 
-## 4. Server (optional backup SMS path, not hosted)
+## 3. Server (optional backup SMS path, not hosted)
 
 ```bash
 cd "BUTA APP/server"
 npm install
 ```
 
-## 5. Model training environment (only if you will train on this laptop)
+## 4. Model training environment (only if you will train on this laptop)
 
 ```bash
 cd "BUTA APP/model"
@@ -89,7 +90,7 @@ app can't read — use this instead):
 3. `train-venv\Scripts\onnx2tf.exe -i best.onnx -o tfl_out -nuo`
 4. Check it with `model/export/v3/verify_v3.py` (input must be `[1, 320, 320, 3]`).
 
-## 6. Connect the phone
+## 5. Connect the phone
 
 Turn on **USB debugging** on the phone (Settings → Developer options), plug it in, allow the
 computer, then check:
@@ -97,3 +98,17 @@ computer, then check:
 ```bash
 "%LOCALAPPDATA%\Android\Sdk\platform-tools\adb.exe" devices
 ```
+
+## 6. Cane hardware (ESP32)
+
+- **Simulator:** nothing to install. Open <https://wokwi.com> and follow `hardware/wokwi/README.md`.
+- **Real board:** install the [Arduino IDE](https://www.arduino.cc/en/software), add the boards
+  package **"esp32" by Espressif** and the library **"VL53L0X" by Pololu**, then open
+  `hardware/firmware/guideai_cane/guideai_cane.ino` (set `#define SIMULATION 0`).
+- If Windows doesn't see the ESP32 on a COM port, install the USB driver printed on the board's
+  USB chip (CP210x or CH340).
+
+## 7. Keeping both laptops in sync
+
+Work on one laptop at a time. Before you start: `git pull`. When you finish:
+`git add -A`, `git commit -m "what changed"`, `git push`.
